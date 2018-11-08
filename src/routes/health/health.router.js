@@ -9,3 +9,4 @@ router.get("", healthController);
 module.exports = {
   healthRouter: router
 }
+
