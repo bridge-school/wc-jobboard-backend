@@ -14,5 +14,3 @@ router.post("", (req, res) => {
 module.exports = {
   jobsRouter: router
 }
-
-
