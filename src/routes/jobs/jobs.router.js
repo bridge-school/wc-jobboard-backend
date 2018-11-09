@@ -4,7 +4,7 @@ const { jobsController } = require("./jobs.controller");
 const router = express.Router();
 const db = require("../../utils/database.js");
 
-router.get("", jobsController);
+router.get("/", jobsController);
 router.post("", (req, res) => {
   const formData = req.body;
   console.log(req.body);
