@@ -6,7 +6,6 @@ const jobsController = (req, res) => {
   let jobsData = [];
   db.collection('jobs').get()
     .then((snapshot) => {
-
       snapshot.forEach((doc) => {
         jobsData = jobsData.concat(translateData(doc.data().formData));
       });
