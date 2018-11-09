@@ -7,7 +7,6 @@ const { logger } = require("./utils/logger");
 const { errorHandler } = require("./middleware/error-handler");
 // const serviceAccount = require("../firebase-credentials.json");
 
-
 // const db = admin.firestore();
 
 // Create a new express application instance
@@ -31,5 +30,5 @@ if (process.env.NODE_ENV !== "test") {
 
 module.exports = {
   app,
-  // db = admin.firestore();
+  // db
 };

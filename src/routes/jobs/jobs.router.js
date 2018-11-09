@@ -1,12 +1,18 @@
 const express = require('express');
 const { jobsController } = require("./jobs.controller");
+const bodyParser = require("body-parser");
 const router = express.Router();
 
+
+router.use(bodyParser.urlencoded({
+  extended: true
+}));
+router.use(bodyParser.json());
+
 router.get("", jobsController);
-router.post("", (req, res) => {
-  console.log(req.body)
+router.post("/post-a-job", (req, res) => {
   res.send({
-    'ok': 'ok'
+    'ok': req.body
   });
 });
 
