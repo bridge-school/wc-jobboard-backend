@@ -5,13 +5,13 @@ const { jobsController } = require("./jobs.controller");
 const router = express.Router();
 
 router.get("", jobsController);
+router.post("", (req, res) => {
+  console.log(req.body);
+  res.send({
+    ok: "ok"
+  });
+});
 
 module.exports = {
   jobsRouter: router
 }
-
-
-const app = express();
-app.post('/test', function (req, res) {
-  console.log(req.body)
-})
