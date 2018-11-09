@@ -8,12 +8,7 @@ const { errorHandler } = require("./middleware/error-handler");
 // const serviceAccount = require("../firebase-credentials.json");
 
 
-// // initialize firebase store
-// admin.initializeApp({
-//   credential: admin.credential.cert(serviceAccount)
-// });
-
-// const db = admin.firestore();
+export const db = admin.firestore();
 
 // Create a new express application instance
 const app = express();
@@ -35,7 +30,6 @@ if (process.env.NODE_ENV !== "test") {
 }
 
 module.exports = {
-  // test: "got it",
-  app
+  app,
   // db = admin.firestore();
-};
+}
