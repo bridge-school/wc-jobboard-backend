@@ -1,11 +1,11 @@
 const express = require("express");
 const morgan = require("morgan");
-// const admin = require("firebase-admin");
 const router = require("./api");
 const { logger } = require("./utils/logger");
 const { errorHandler } = require("./middleware/error-handler");
-// const serviceAccount = require("../firebase-credentials.json");
+
 const bodyParser = require('body-parser');
+
 
 // Create a new express application instance
 const app = express();
@@ -27,7 +27,5 @@ if (process.env.NODE_ENV !== "test") {
 }
 
 module.exports = {
-  // test: "got it",
-  app,
-  // db = admin.firestore();
+  app
 };

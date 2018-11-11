@@ -1,20 +1,20 @@
-const db = require("../../utils/database.js");
+const db = require("../../utils/database.js"); 
+const translateData = require("./jobs.model.js")
 
-console.log(db);
-
-const jobsController = (req, res) => { 
-  console.log("iM HERE");
+const jobsController = (req, res) => {
+  console.log("im in the controller")
+  let jobsData = [];
   db.collection('jobs').get()
     .then((snapshot) => {
+
       snapshot.forEach((doc) => {
-        console.log(doc.id, '=>', doc.data());
-        res.json(doc.data());
+        jobsData = jobsData.concat(translateData(doc.data().formData));
       });
+      return res.json(jobsData);
     })
     .catch((err) => {
       console.log('Error getting documents', err);
     });
-
 
 // return res.json({
 //   jobs: [

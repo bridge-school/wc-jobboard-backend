@@ -42,6 +42,5 @@
       "js",
       "json"
     ]
-  },
-  "proxy": "http://localhost:8081"
+  }
 }
