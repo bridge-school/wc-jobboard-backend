@@ -2,12 +2,13 @@ const db = require("../../utils/database.js");
 
 console.log(db);
 
-const jobsController = (req, res) => {
+const jobsController = (req, res) => { 
   console.log("iM HERE");
   db.collection('jobs').get()
     .then((snapshot) => {
       snapshot.forEach((doc) => {
         console.log(doc.id, '=>', doc.data());
+        res.json(doc.data());
       });
     })
     .catch((err) => {
