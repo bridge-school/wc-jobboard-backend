@@ -1,18 +1,23 @@
 const express = require("express");
 const morgan = require("morgan");
-const admin = require("firebase-admin");
+// const admin = require("firebase-admin");
 
 const router = require("./api");
 const { logger } = require("./utils/logger");
 const { errorHandler } = require("./middleware/error-handler");
-const serviceAccount = require("../firebase-credentials.json");
+// const serviceAccount = require("../firebase-credentials.json");
 
-// initialize firebase store
-admin.initializeApp({
-  credential: admin.credential.cert(serviceAccount)
-});
 
+<<<<<<< cab5a2c9c20332af6cb23e837b9cebb740fc365d
 const db = admin.firestore();
+=======
+// // initialize firebase store
+// admin.initializeApp({
+//   credential: admin.credential.cert(serviceAccount)
+// });
+
+// const db = admin.firestore();
+>>>>>>> restructuring to allow db import
 
 // Create a new express application instance
 const app = express();
@@ -34,6 +39,12 @@ if (process.env.NODE_ENV !== "test") {
 }
 
 module.exports = {
+<<<<<<< cab5a2c9c20332af6cb23e837b9cebb740fc365d
   app,
   db,
+=======
+  // test: "got it",
+  app
+  // db = admin.firestore();
+>>>>>>> restructuring to allow db import
 };

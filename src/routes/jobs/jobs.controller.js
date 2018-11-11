@@ -1,23 +1,22 @@
-const { db } = require("../../index.js"); 
+const db = require("../../utils/database.js"); 
 
 console.log(db)
 
 const jobsController = (req, res) => {
-    const docRef = app.db.collection('jobs')
-    console.log(docRef)
-    res.json({ sup: 'dog' })
-    console.log("iM HERE")
-    // docRef.get().then(function(collection){
-    //     if (collection.exists){
-    //         console.log('Collection:', collection.data());
-    //         return res.json(collection);
+  console.log("iM HERE")
+    // const docRef = db.collection('jobs')
 
-    //     } else {
-    //         console.log('No collection posted')
-    //     }
-    // }).catch(function(error){
-    //     console.log(error)
-    // })
+    db.collection('jobs').get()
+      .then((snapshot) => {
+        snapshot.forEach((doc) => {
+          console.log(doc.id, '=>', doc.data());
+        });
+      })
+      .catch((err) => {
+        console.log('Error getting documents', err);
+      });
+
+
     // return res.json({
     //   jobs: [
         // {
