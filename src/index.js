@@ -12,7 +12,7 @@ admin.initializeApp({
   credential: admin.credential.cert(serviceAccount)
 });
 
-export const db = admin.firestore();
+const db = admin.firestore();
 
 // Create a new express application instance
 const app = express();
@@ -35,5 +35,5 @@ if (process.env.NODE_ENV !== "test") {
 
 module.exports = {
   app,
-  // db = admin.firestore();
+  db,
 };
