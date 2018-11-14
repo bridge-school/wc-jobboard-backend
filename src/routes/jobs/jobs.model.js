@@ -1,6 +1,8 @@
 const setToFalse = (trueOrFalse) => {
-  if (trueOrFalse !== true || false) {
+  if (trueOrFalse == null) {
     return false;
+  } else {
+    return trueOrFalse
   }
 };
 
@@ -8,8 +10,8 @@ const translateJobsFromRequest = (data) => {
 // transform from JSON object into an object to put into state
   return {
     logo: "https://d3bza9ldbeb18h.cloudfront.net/assets/placeholder-company-b9d0a167b1f7460768517d115285de2337c6e2a84f4285617722efa587c693fc.png",
-    title: data.LastName,
-    companyName: data.firstName,
+    title: data.title,
+    companyName: data.companyName,
     city: data.city,
     link: data.link,
     benefits: {
